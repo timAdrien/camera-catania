@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Photo & Data binding
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-navbar *navbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-navbar>
+
+  <ion-content class="home">
+    <h1>PHOTO</h1>
+    <ion-card>
+      <ion-card-content>
+        Salut ! Si tu veux prend une photo ! ;)
+
+        <button (click)="takePicture()">Prendre une photo</button>
+
+        Dernière photo:
+        <img [src]="base64Image" *ngIf="base64Image" />
+      </ion-card-content>
+    </ion-card>
+    <br/> <br/>
+    <h1>Data binding</h1><br/>
+    Votre Login: {{login}} <br/>
+    Votre mot de passe : {{password}}
+    <ion-item>
+      <ion-label color="primary" floating>Login</ion-label>
+      <ion-input  [(ngModel)]="login"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Password</ion-label>
+      <ion-input  [(ngModel)]="password" type="password"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button secondary full>Connexion</button>
+
+  </ion-content>
+</ion-content>
