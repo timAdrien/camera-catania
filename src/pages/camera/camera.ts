@@ -33,8 +33,8 @@ export class CameraPage {
     });
   }
 
-  savePicture(){
-    Base64ToGallery.base64ToGallery(this.base64Image, { prefix: 'img' }).then(
+  savePicture(img){
+   Base64ToGallery.base64ToGallery(img, { prefix: 'img_' }).then(
       res => console.log('Saved image to gallery ', res),
       err => console.log('Error saving image to gallery ', err)
     );

@@ -27,7 +27,9 @@
     "@ionic/storage": "2.0.1",
     "cordova-base64-to-gallery": "^4.1.2",
     "cordova-plugin-camera": "^2.4.1",
+    "cordova-plugin-canvas2image": "git+https://github.com/devgeeks/Canvas2ImagePlugin.git",
     "cordova-plugin-ionic": "^2.0.2",
+    "cordova-plugin-save-image": "^0.2.5",
     "de.appplant.cordova.plugin.local-notification": "^0.8.5",
     "ionic-angular": "3.7.1",
     "ionic-native": "^2.9.0",
@@ -50,7 +52,9 @@
       },
       "cordova-plugin-camera": {},
       "de.appplant.cordova.plugin.local-notification": {},
-      "cordova-base64-to-gallery": {}
+      "cordova-base64-to-gallery": {},
+      "org.devgeeks.Canvas2ImagePlugin": {},
+      "cordova-plugin-save-image": {}
     }
   }
 }
