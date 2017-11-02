@@ -23,8 +23,8 @@ export class NotificationPage {
   public notifMe(text, time) {
     LocalNotifications.schedule({
       title: "Notification TP",
-      text: "Delayed Notification",
-      at: new Date(new Date().getTime() + 5 * 1000),
+      text: text,
+      at: new Date(new Date().getTime() + time * 1000),
       sound: null
     });
   }
