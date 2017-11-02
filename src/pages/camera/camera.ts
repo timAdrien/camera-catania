@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { IonicPage} from 'ionic-angular';
 import { Camera} from '@ionic-native/camera';
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
@@ -26,7 +26,6 @@ export class CameraPage {
   public base64Image: string;
   public imageData: string;
   public videoData: string;
-  @ViewChild('myvideo') myVideo: any;
 
   constructor(private camera:Camera,
               private base64ToGallery:Base64ToGallery,
@@ -57,7 +56,6 @@ export class CameraPage {
   startRecording() {
     this.mediaCapture.captureVideo((videodata) => {
       this.videoData = JSON.stringify(videodata);
-      alert(JSON.stringify(videodata));
     })
   }
 
