@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Camera, Base64ToGallery, MediaCapture} from 'ionic-native';
+import { VideoCapturePlus, VideoCapturePlusOptions, MediaFile } from '@ionic-native/video-capture-plus';
 
 /**
  * Generated class for the CameraPage page.
@@ -20,7 +21,8 @@ export class CameraPage {
   public videoData: string;
   @ViewChild('myvideo') myVideo: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private mediaCapture: MediaCapture) {
   }
 
   takePicture(){
@@ -45,10 +47,14 @@ export class CameraPage {
   }
 
   startRecording() {
-    MediaCapture.captureVideo((videodata) => {
+   /* MediaCapture.captureVideo((videodata) => {
       this.videoData = JSON.stringify(videodata);
       alert(JSON.stringify(videodata));
-    })
+    })*/
+
+    MediaCapture.captureVideo().then((data: MediaFile[]) =>{
+      console.log(data) // data is the captured video file object
+    });
   }
 
   saveVideo() {

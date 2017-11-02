@@ -92,4 +92,5 @@
     <plugin name="org.devgeeks.Canvas2ImagePlugin" spec="https://github.com/devgeeks/Canvas2ImagePlugin.git" />
     <plugin name="cordova-plugin-save-image" spec="^0.2.5" />
     <plugin name="cordova-plugin-media-capture" spec="^1.4.3" />
+    <plugin name="nl.x-services.plugins.videocaptureplus" spec="~1.0.0" />
 </widget>
