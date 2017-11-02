@@ -15,13 +15,14 @@ import {LocalNotifications} from 'ionic-native';
 })
 export class NotificationPage {
 
+  textToBeNotify: String = "";
   constructor(private navController: NavController) {
 
   }
 
-  public notifMe() {
+  public notifMe(text, time) {
     LocalNotifications.schedule({
-      title: "Test Title",
+      title: "Notification TP",
       text: "Delayed Notification",
       at: new Date(new Date().getTime() + 5 * 1000),
       sound: null

@@ -23,10 +23,11 @@
     <h1>PHOTO</h1>
     <ion-card>
       <ion-card-header>
-        <button ion-button color="secondary" (click)="takePicture()">Prendre une photo</button>
+        <button ion-button color="primary" (click)="takePicture()">Prendre une photo</button>
       </ion-card-header>
       <ion-card-content>
         <div *ngIf="base64Image">
+          <button ion-button color="secondary" (click)="savePicture()">Prendre une photo</button>
           Dernière photo:
           <img [src]="base64Image"  />
         </div>

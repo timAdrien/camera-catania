@@ -12,10 +12,12 @@
 
 </ion-header>
 
-
 <ion-content padding>
-
   <ion-content padding>
-    <button ion-button color="primary"  (click)="notifMe()">Notif ?</button>
+    <ion-item>
+      <ion-label color="primary" floating>Message</ion-label>
+      <ion-input  [(ngModel)]="textToBeNotify"></ion-input>
+    </ion-item>
+    <button ion-button color="primary"  (click)="notifMe(textToBeNotify, 2)">Push !</button>
   </ion-content>
 </ion-content>

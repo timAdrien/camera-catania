@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {Camera} from 'ionic-native';
-
+import {Camera, Base64ToGallery} from 'ionic-native';
 /**
  * Generated class for the CameraPage page.
  *
@@ -31,6 +30,13 @@ export class CameraPage {
     }, (err) => {
       console.log(err);
     });
+  }
+
+  savePicture(){
+    Base64ToGallery.base64ToGallery(this.base64Image, 'img_').then(
+      res => console.log("Image sauvegardée ", res),
+      err => console.log("Une erreur est survenue en sauvegardant l'image", err)
+    );
   }
 
 }
