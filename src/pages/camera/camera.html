@@ -1,0 +1,37 @@
+<!--
+  Generated template for the CameraPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Photo & Data binding
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-navbar *navbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-navbar>
+
+  <ion-content class="home">
+    <h1>PHOTO</h1>
+    <ion-card>
+      <ion-card-content>
+        Salut ! Si tu veux prend une photo ! ;)
+
+        <button (click)="takePicture()">Prendre une photo</button>
+
+        <div *ngIf="base64Image">
+          Dernière photo:
+          <img [src]="base64Image"  />
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-content>
