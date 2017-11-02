@@ -28,6 +28,7 @@ export class CameraPage {
       targetHeight: 1000
     }).then((imageData) => {
       // base64 photo
+      this.imageData = imageData;
       this.base64Image = "data:image/jpeg;base64," + imageData;
     }, (err) => {
       console.log(err);
