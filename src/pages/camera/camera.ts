@@ -14,7 +14,12 @@ import { MediaCapture } from '@ionic-native/media-capture';
 
 @IonicPage()
 @Component({
-  templateUrl: 'camera.html'
+  templateUrl: 'camera.html',
+  providers: [
+    Camera,
+    Base64ToGallery,
+    MediaCapture
+  ],
 })
 
 export class CameraPage {
@@ -54,10 +59,6 @@ export class CameraPage {
       this.videoData = JSON.stringify(videodata);
       alert(JSON.stringify(videodata));
     })
-  }
-
-  saveVideo() {
-
   }
 
 }
