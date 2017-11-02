@@ -1,4 +1,9 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+
+# TP 
+Camera Projet
+
+# Author
+Timothée ADRIEN - M1 Ingésup
 
 ## How to use this template
 
