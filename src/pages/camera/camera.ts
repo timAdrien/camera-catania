@@ -22,7 +22,7 @@ export class CameraPage {
   @ViewChild('myvideo') myVideo: any;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private mediaCapture: MediaCapture) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   takePicture(){
