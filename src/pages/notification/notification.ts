@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Alert } from 'ionic-angular';
-import {LocalNotifications} from 'ionic-native';
+import { IonicPage } from 'ionic-angular';
+import { LocalNotifications } from 'ionic-native';
 
 /**
  * Generated class for the NotificationPage page.
@@ -16,7 +16,7 @@ import {LocalNotifications} from 'ionic-native';
 export class NotificationPage {
 
   textToBeNotify: String = "";
-  constructor(private navController: NavController) {
+  constructor() {
 
   }
 

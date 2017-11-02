@@ -1,7 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {Camera, Base64ToGallery, MediaCapture} from 'ionic-native';
-import { VideoCapturePlus, VideoCapturePlusOptions, MediaFile } from '@ionic-native/video-capture-plus';
+import { IonicPage} from 'ionic-angular';
+import { Camera} from '@ionic-native/camera';
+import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
+import { MediaCapture } from '@ionic-native/media-capture';
+
 
 /**
  * Generated class for the CameraPage page.
@@ -21,13 +23,14 @@ export class CameraPage {
   public videoData: string;
   @ViewChild('myvideo') myVideo: any;
 
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private camera:Camera,
+              private base64ToGallery:Base64ToGallery,
+              private mediaCapture:MediaCapture) {
   }
 
   takePicture(){
-    Camera.getPicture({
-      destinationType: Camera.DestinationType.DATA_URL,
+    this.camera.getPicture({
+      destinationType: this.camera.DestinationType.DATA_URL,
       targetWidth: 1000,
       targetHeight: 1000
     }).then((imageData) => {
@@ -40,21 +43,17 @@ export class CameraPage {
   }
 
   savePicture() {
-   Base64ToGallery.base64ToGallery(this.imageData, { prefix: 'img_' }).then(
+   this.base64ToGallery.base64ToGallery(this.imageData, { prefix: 'img_' }).then(
       res => console.log('Saved image to gallery ', res),
       err => console.log('Error saving image to gallery ', err)
     );
   }
 
   startRecording() {
-   /* MediaCapture.captureVideo((videodata) => {
+    this.mediaCapture.captureVideo((videodata) => {
       this.videoData = JSON.stringify(videodata);
       alert(JSON.stringify(videodata));
-    })*/
-
-    MediaCapture.captureAudio().then((data: MediaFile[]) =>{
-      console.log(data) // data is the captured video file object
-    });
+    })
   }
 
   saveVideo() {
