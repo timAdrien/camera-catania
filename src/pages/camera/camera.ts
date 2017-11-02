@@ -52,7 +52,7 @@ export class CameraPage {
       alert(JSON.stringify(videodata));
     })*/
 
-    MediaCapture.captureVideo().then((data: MediaFile[]) =>{
+    MediaCapture.captureAudio().then((data: MediaFile[]) =>{
       console.log(data) // data is the captured video file object
     });
   }
