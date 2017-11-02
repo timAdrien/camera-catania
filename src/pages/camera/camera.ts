@@ -17,6 +17,7 @@ import {Camera, Base64ToGallery, MediaCapture} from 'ionic-native';
 export class CameraPage {
   public base64Image: string;
   public imageData: string;
+  public videoData: string;
   @ViewChild('myvideo') myVideo: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -45,6 +46,7 @@ export class CameraPage {
 
   startRecording() {
     MediaCapture.captureVideo((videodata) => {
+      this.videoData = JSON.stringify(videodata);
       alert(JSON.stringify(videodata));
     })
   }
