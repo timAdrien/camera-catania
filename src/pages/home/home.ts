@@ -12,6 +12,8 @@ import { NotificationPage} from '../notification/notification';
 })
 
 export class HomePage {
+
+  // Déclaration des pages
   cameraPage = CameraPage;
   notificationPage = NotificationPage;
 

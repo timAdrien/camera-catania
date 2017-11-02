@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
-import { LocalNotifications } from 'ionic-native';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 /**
  * Generated class for the NotificationPage page.
@@ -16,12 +16,15 @@ import { LocalNotifications } from 'ionic-native';
 export class NotificationPage {
 
   textToBeNotify: String = "";
-  constructor() {
+
+  constructor(private localNotifications:LocalNotifications) {
 
   }
 
+  // Fonction de notification en "local"
+  // Params: Texte à notifier, Temps avant d'afficher la notification
   public notifMe(text, time) {
-    LocalNotifications.schedule({
+    this.localNotifications.schedule({
       title: "Notification TP",
       text: text,
       at: new Date(new Date().getTime() + time * 1000),
