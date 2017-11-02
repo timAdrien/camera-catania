@@ -19,14 +19,13 @@
     </ion-title>
   </ion-navbar>
 
-  <ion-content class="home">
+  <ion-content class="camera">
     <h1>PHOTO</h1>
     <ion-card>
+      <ion-card-header>
+        <button ion-button color="secondary" (click)="takePicture()">Prendre une photo</button>
+      </ion-card-header>
       <ion-card-content>
-        Salut ! Si tu veux prend une photo ! ;)
-
-        <button (click)="takePicture()">Prendre une photo</button>
-
         <div *ngIf="base64Image">
           Dernière photo:
           <img [src]="base64Image"  />

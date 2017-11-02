@@ -20,10 +20,6 @@ export class CameraPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CameraPage');
-  }
-
   takePicture(){
     Camera.getPicture({
       destinationType: Camera.DestinationType.DATA_URL,
