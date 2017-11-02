@@ -34,7 +34,7 @@ export class CameraPage {
   }
 
   savePicture(){
-    Base64ToGallery.base64ToGallery(this.base64Image, { prefix: '_img' }).then(
+    Base64ToGallery.base64ToGallery(this.base64Image, { prefix: 'img' }).then(
       res => console.log('Saved image to gallery ', res),
       err => console.log('Error saving image to gallery ', err)
     );
