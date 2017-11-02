@@ -24,6 +24,7 @@
     <ion-card>
       <ion-card-header>
         <button ion-button color="primary" (click)="takePicture()">Prendre une photo</button>
+        <button ion-button color="primary" (click)="startRecording()">Prendre une vidéo</button>
       </ion-card-header>
       <ion-card-content>
         <div *ngIf="base64Image">
@@ -31,6 +32,12 @@
           Dernière photo:
           <img [src]="base64Image"  />
         </div>
+        <div *ngIf="base64Image">
+          <button ion-button color="secondary" (click)="saveVideo()">Sauvegarder la vidéo</button>
+          Dernière vidéo:
+          <video #myvideo height="300" width="300" controls></video>
+        </div>
+
       </ion-card-content>
     </ion-card>
   </ion-content>

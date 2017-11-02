@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {Camera, Base64ToGallery} from 'ionic-native';
+import {Camera, Base64ToGallery, MediaCapture} from 'ionic-native';
 
 /**
  * Generated class for the CameraPage page.
@@ -17,6 +17,7 @@ import {Camera, Base64ToGallery} from 'ionic-native';
 export class CameraPage {
   public base64Image: string;
   public imageData: string;
+  @ViewChild('myvideo') myVideo: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -35,11 +36,21 @@ export class CameraPage {
     });
   }
 
-  savePicture(){
+  savePicture() {
    Base64ToGallery.base64ToGallery(this.imageData, { prefix: 'img_' }).then(
       res => console.log('Saved image to gallery ', res),
       err => console.log('Error saving image to gallery ', err)
     );
+  }
+
+  startRecording() {
+    MediaCapture.captureVideo((videodata) => {
+      alert(JSON.stringify(videodata));
+    })
+  }
+
+  saveVideo() {
+
   }
 
 }
